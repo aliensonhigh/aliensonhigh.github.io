@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
 
+  const fragment = document.createDocumentFragment();
   const map = [
     "kkjlllollmllll_____ ___________g_____kkjjllllllollmllllnlolllmnll",
     "mllllnlolllmn______ _C________MikL__kkjjmllllnlolllmnlllllllolllk",
@@ -42,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     return [...topBottom, ...middle, ...topBottom];
   }
 
-  const borderedMap = addWaterBorder(map, 50);
+  const borderedMap = addWaterBorder(map, 10);
 
   const tileGroups = {
     rocks: ["D","E","H","N","L","M","P","Q","R","T","V","b","c","d","e","f","0","1","2","3","4","7"],
@@ -81,7 +82,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const world = document.getElementById("world");
   const caption = document.getElementById("caption");
 
-  let player = { x: 90, y: 58 };
+  let player = { x: 50, y: 19 };
   const grid = [];
 
   let camX = 0, camY = 0, targetX = 0, targetY = 0;
@@ -90,9 +91,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const viewport = document.getElementById("viewport");
 
 const buildingLabels = [
-  { x: 72, y: 51, text: "About" },
-  { x: 73, y: 63, text: "Archives" },
-  { x: 106, y: 65, text: "Curriculum Vitae" }
+  { x: 30, y: 13, text: "About" },
+  { x: 32, y: 22, text: "Archives" },
+  { x: 63, y: 25, text: "Curriculum Vitae" }
 ];
 
 const labelElements = [];
@@ -136,9 +137,25 @@ function createLabels() {
   }
 
   borderedMap.forEach((row, y) => {
+
     const rowEl = document.createElement("div");
     grid[y] = [];
+
+    // ONE click listener per row
+    rowEl.addEventListener("click", e => {
+
+      const tile = e.target;
+      if (!tile.classList.contains("tile")) return;
+
+      const x = [...tile.parentNode.children].indexOf(tile);
+      const y = [...world.children].indexOf(tile.parentNode);
+
+      movePlayerIfAllowed(x, y);
+
+    });
+
     [...row].forEach((char, x) => {
+
       const span = document.createElement("span");
       span.className = `tile ${tileCategory[char] || "empty"}`;
       span.textContent = char;
@@ -150,22 +167,25 @@ function createLabels() {
 
       if (linkTiles[char]) {
         span.classList.add("interactive");
+
         span.addEventListener("mouseenter", () => {
           caption.innerHTML = `<span class="player-symbol">${char}</span> — ${linkTiles[char].description}`;
         });
-        span.addEventListener("mouseleave", () => caption.textContent = "");
-      }
 
-      span.addEventListener("click", () => {
-        console.log("tile:", x, y, "char:", char);
-        movePlayerIfAllowed(x,y);
-      });
+        span.addEventListener("mouseleave", () => {
+          caption.textContent = "";
+        });
+      }
 
       grid[y][x] = span;
       rowEl.appendChild(span);
+
     });
-    world.appendChild(rowEl);
+
+    fragment.appendChild(rowEl);
+
   });
+  world.appendChild(fragment);
 
   function movePlayerIfAllowed(x,y){
     if(y<0||y>=borderedMap.length) return;
@@ -204,7 +224,7 @@ function createLabels() {
 
   function centerCamera(){
     const viewport = document.getElementById("viewport");
-    const rect = grid[0][0].getBoundingClientRect();
+    const rect = grid[0][0].offsetWidth ? {width:grid[0][0].offsetWidth, height:grid[0][0].offsetHeight} : grid[0][0].getBoundingClientRect();
     targetX = viewport.clientWidth/2 - player.x*rect.width - rect.width/2;
     targetY = viewport.clientHeight/2 - player.y*rect.height - rect.height/2;
   }
