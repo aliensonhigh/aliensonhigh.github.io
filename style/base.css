@@ -12,26 +12,26 @@
   --caption-height:30px;
 
   /* map palettes */
-  --rocks-1:#888181;
+  --rocks-1:#a0987d;
   --rocks-2:#897b5b;
-  --rocks-3:#614d2e;
+  --rocks-3:#7a6c57;
 
   --grass-1:#818d54;
-  --grass-2:#44872e;
-  --grass-3:#137518;
+  --grass-2:#658f57;
+  --grass-3:#558147;
 
   --water-1:#556e80;
-  --water-2:#3a788f;
-  --water-3:#346475;
+  --water-2:#5d8594;
+  --water-3:#556b74;
 
   --paths-1:#c2a77b;
   --paths-2:#ab9871;
 
-  --ground-1:#68554d;
-  --ground-2:#5e524c;
+  --ground-1:#897b5b;
+  --ground-2:#816843;
 
   --building-1:#b81515;
-  --buildingTop-1:#4d3909;
+  --buildingTop-1:#685a3b;
 
   --empty-1:rgb(223,207,185);
 }

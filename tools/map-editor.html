@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Map Editor</title>
+
+<link rel="stylesheet" href="../style/base.css">
+
+<style>
+body{ display:flex; gap:20px; padding:20px; align-items:flex-start;}
+
+#editor{
+  font-family:TILESportfolio;
+  line-height:1;
+  display:inline-block;
+  vertical-align: top;
+}
+
+.row{ height:14px; }
+.tile{
+  display:inline-block;
+  width:14px;
+  text-align:center;
+  cursor:pointer;
+}
+
+#tools{
+  width:200px;
+  font-family:PixelPlay;
+}
+
+#tools > button[data-brush]{
+  display:inline-block;
+  width:30%;
+}
+
+#tile-list{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  gap:4px;
+}
+
+button{
+  width:100%;
+  font-size:20px;
+  font-family:TILESportfolio;
+}
+
+.active{
+  background:red;
+  color:white;
+}
+/* UI buttons (resize, export) */
+#tools > button:not([data-brush]),
+#tools input,
+#tools h3{
+  font-family: PixelPlay;
+}
+
+/* keep tile buttons in tile font */
+#tile-list button,
+button[data-brush]{
+  font-family: TILESportfolio;
+}
+
+#editor{
+  user-select:none;
+  border:2px solid black;
+  padding:10px;
+  background:rgb(223,207,185);
+}
+
+#tools input{
+  width:80px;
+  margin-bottom:6px;
+  font-family:PixelPlay;
+}
+</style>
+</head>
+
+<body>
+
+<div id="editor"></div>
+
+<div id="tools">
+
+<h3>Brush</h3>
+<button data-brush="water">j</button>
+<button data-brush="grass">G</button>
+<button data-brush="ground">I</button>
+
+<h3>Tiles</h3>
+<div id="tile-list"></div>
+
+<h3>Map Size</h3>
+
+<input id="map-width" placeholder="width (x)">
+<input id="map-height" placeholder="height (y)">
+
+<button id="resize">Resize</button>
+
+<button id="export">Export</button>
+<h3>Import</h3>
+<textarea id="import-box" rows="6"></textarea>
+<button id="import">Load Map</button>
+
+</div>
+
+<script src="map-editor.js"></script>
+</body>
+</html>

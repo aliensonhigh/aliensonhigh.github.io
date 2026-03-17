@@ -2,24 +2,46 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const fragment = document.createDocumentFragment();
   const map = [
-    "kkjlllollmllll_____ ___________g_____kkjjllllllollmllllnlolllmnll",
-    "mllllnlolllmn______ _C________MikL__kkjjmllllnlolllmnlllllllolllk",
-    "_lnllllollolllmnmn_ _Bdfe____YOSOSR_lllmnlolnmlllllonnjk_jlljklll",
-    "__lllollmllllnlolllmjSCXe_gWGJITHTHh!!Gg_gGgW!F!F!Gfe__gW_llollol",
-    "lnllllollolllmnmnlnk6ABB5LgWgjkkjkkjkkMLe__ gYGgWge_MZSce___Mllnl",
-    "mllllnlolllmnlllolllgGkjllmllnmllolllljkLMLGFFGGFGGGg_WGWWCClnm",
-    "lllollmllllnlolllmnjMabcdellmlnlomllljkL__zxyzry_zxzy__ CBBBL_l",
-    "mllllnlomgglllllolln gWGWg_1 24e__xWMacdaeMLgGFpGfLgWFFRHSPPQLj",
-    "ollmllolMOPQLllolnml _Mfe132434a_c_gWGWGFFGFFXqwXWgeeOOPOQEDe_l",
-    "mllllnlolllmnlllo__MaZEOPPERSZKTTNPOFFGWgLMe txy_zxzsadeefGWgjl",
-    "mllllnlomnllbl_gWGW_EEDGgGGWPPi77i5kjkY#jkj  peffkjkjXXZa1_4lll",
-    "lllollmllllnlolllm_ abcdefaSPHH__KRGVKLML qxzw XW gllmI___gGWgL",
-    "ollmllolllmnllo____ GGFFFGG_GGFFGGWg  qxyzw_MSQDRPZKThHOGFGWgllm",
-    "mllllnlolllmn______ __UW_ zyxyzxyzxxzzwzyxs___gGWDDHOPQcde14lgGlj",
-    "mllllmllllnlollollX MZSceXGW gRRcegWMRSSOPp0_1_317i7KJ#XWQPEllOll",
-    "mllllmllllnlmlloFFXlllmnlogGF FGWg_16PX_gWvxyzzyrxy____9__gZZLll",
-    "mllllnloLGnllbllollmlllolllYbX_MQZllmlojjkg_gGg vxyzs__8__LLlllom",
-    "ollmllollllnllolnmlllmnlomlllnMfdlnlllmlk__gWGFFT!FfMQSOPeXWg_kjlll"
+  "lollnlllnlomllllllmllllllllllllllllllnllllllllllmollmjjjllll",
+  "nllllllllml70_24_17E7PbE3R2M77777llonllll3_1llllnllm__0__oll",
+  "ollllllm77_________McMQQDPL2E3P0ML7molll_29f_llloll_Wg_F__ll",
+  "mllllll____GWGFFGGWc2df_1b41040b1E3emllllMHLllllll__3___W__l",
+  "lll5k_1__c__9FFFFWg_3E_____b04eZcO0Qablllolll0llll___YU__1_l",
+  "llllljk_____CX_4______YFWW3cbcOROaQb12Tlllllllllll_4_bEPe__l",
+  "lllll_______BC__0___4_WF___!Pha4PeOh;#Pllllllnllll_WMPHDR__o",
+  "nlllb_WW3__fSB____1__________cc2EQ___00l1llllllllll_77p77_ln",
+  "olOEDc_WW__CiS9G___WW_d___F_____GFGGXXdlllllllllllll_3p__nlo",
+  "llZEOZR_WWciBiSEegf_____M3PfL___FFFFFc07llllll727llll_p0llll",
+  "llb6hPNRFF6hAhOHDb0XfFYR2PPc3deFXFFFgGYWlllll1P1R7lll4p_omll",
+  "nl77777_____p_g_XGX___WYW_YYF_qw______klllNQL1e2___7o2p_noll",
+  "l;#___FW____p______g_GggY____qw_____klll7_03e_PLC_1_7_pdnlln",
+  "c___XGWGgG__p__0_____________p_____lll7___M3bJ0_B_____p17lll",
+  "_______YF___vyzxxxy_zxxyzxryxuxyM###exyzxs_M_I_6S__Q__p__lll",
+  "n___0____________W__e___L4p__FYXI777I____p___MTOhJ__f_p__lll",
+  "ln____PN7___O__1dPbd_c__0Qp_YXGllllk_____p9_D____I__qxw__lll",
+  "nn_F_______!h5_fHPEEd_____pggolllml7___9CiS_________p__G_lnl",
+  "o_6aZXW9_______qx3zzxyz__zwgWllllljk___iSSiC__J_d1__p__P_lll",
+  "_YPPPOZPP4__1__p_f0___mjjjjlllljll_YXX_B3p1B__I_Md__p_6K57nl",
+  "_OPNHDPHhNDK___pL_kjklllllnlllfRe______i_p_i_XWg__J_p_____mn",
+  "__0DHHDHb77____p__llollRLllllllo______6h_p6h#3d___J_p_____7l",
+  "c_____4__qxy_zxw_lllnlMEEelll7YX___gXFYg_p___Lc2e_I_p___c1_l",
+  "__WWFWW__________llllllllll7W_GgGFFXXGX_quxxyz___zyxwX_0f__o",
+  "0________pXXGX_Rjjjlll7_________________pO_021________332__m",
+  "_1E3GYGX_pWWzxyz!!!yx___1zxy__4zxxrxys_dp7__ddMC_____040Mefl",
+  "D433Q7dGggG____k777_e4c1__WXG_____p__p__p__2YfbKRLX_dQ1d2__l",
+  "0DfLERFFFXW____lll_MRLf_YFFFFYW___p__vyzw__d__74d___2d3_deKl",
+  "YFWYFVYFFFFYX__lllcP3bbRDc2_____c_p_0_O________1_c_____EPcOl",
+  "FFFFWg_WGGFWd__lllER22P0bc1___4___p__27___WFYg________f302hl",
+  "_GYY_g_WW_____6lllHdd0c___zy_fd0ezts____GgGG741TDGFFFGX_1fQn",
+  "____OHP1PDe__6llll001__J_________4vwzsGFFFFFX__f1________1_j",
+  "jbEQHRhHPbP_6lllllb4__MI__WFgGR_M3___vs_______9_4QMd____0__7",
+  "mljjkkkkkjjlollll7___dZK!e_WGWXX2HR___p_______8X_L4__d_R_d__",
+  "nlmllllllllllllll_4ffc1_________d7c___vy_zxy_ME7O#_____O5__6",
+  "ollllllllllllll7_________kkjjjjkk__4GFFGWg_YRDhNKa5_g_6Kh5_o",
+  "mlolllllnllll7_YGGYg___6llllllllll5_1_dd104____________6llll",
+  "llllll________YFY___6llllllllllllll5___2_W______kkkkk_6lllll",
+  "llll_f3d0LfM4_____6lllllllmllollllll5_MLYbRLL04lllllllllloll",
+  "lllll2d001kkkMLllllllllllollllllllnlllDHNPEbllllllnlllllllll"
   ];
 
   function randomWaterTile() {
@@ -79,10 +101,16 @@ window.addEventListener("DOMContentLoaded", () => {
     V:{description:"hey, psst, congrats on finding me. i love you."}
   };
 
+  const coordinateCaptions = {
+    "51,30": "thanks for going through my gate. I spent a lot of time working on this.",
+    "34,42": "hm... a sword... in a stone...",
+    "52,12": "hey! what! how'd you get in here?! get out, you're not supposed to be here.",
+  };
+
   const world = document.getElementById("world");
   const caption = document.getElementById("caption");
 
-  let player = { x: 50, y: 19 };
+  let player = { x: 44, y: 24 };
   const grid = [];
 
   let camX = 0, camY = 0, targetX = 0, targetY = 0;
@@ -91,9 +119,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const viewport = document.getElementById("viewport");
 
 const buildingLabels = [
-  { x: 30, y: 13, text: "About" },
-  { x: 32, y: 22, text: "Archives" },
-  { x: 65, y: 25, text: "CV" }
+  { x: 22, y: 17, text: "About" },
+  { x: 64, y: 13, text: "Archives" },
+  { x: 57, y: 42, text: "CV" }
 ];
 
 const labelElements = [];
@@ -195,6 +223,7 @@ function createLabels() {
     movePlayerTo(x,y);
   }
 
+
   function movePlayerTo(x,y){
     const oldTile = grid[player.y][player.x];
     oldTile.textContent = borderedMap[player.y][player.x];
@@ -202,6 +231,8 @@ function createLabels() {
     oldTile.style.color = oldTile.dataset.baseColor;
 
     player = {x,y};
+
+    console.log("player:", x, y, "| raw:", x-10, y-10);
 
     const newTile = grid[y][x];
     const category = tileCategory[borderedMap[y][x]] || "empty";
@@ -214,12 +245,22 @@ function createLabels() {
 
     centerCamera();
     const char = borderedMap[y][x];
+    const key = `${x},${y}`;
 
-      if (linkTiles[char]) {
-        caption.innerHTML = `<span class="player-symbol">${char}</span> — ${linkTiles[char].description}`;
-      } else {
-        caption.textContent = "";
-      }
+    // 1. coordinate-based captions (priority)
+    if (coordinateCaptions[key]) {
+      caption.textContent = coordinateCaptions[key];
+    }
+
+    // 2. tile-based captions (fallback)
+    else if (linkTiles[char]) {
+      caption.innerHTML = `<span class="player-symbol">${char}</span> — ${linkTiles[char].description}`;
+    }
+
+    // 3. nothing
+    else {
+      caption.textContent = "";
+    }
   }
 
   function centerCamera(){
@@ -256,6 +297,9 @@ function updateLabels(){
 
   const placed = [];
 
+ 
+  const captionHeight = document.getElementById("caption").offsetHeight;
+
   labelElements.forEach(label => {
 
     const worldX = label.x * tileW + camX + tileW/2;
@@ -270,11 +314,16 @@ function updateLabels(){
     const width = 140;
     const height = 22;
 
+    // LEFT / RIGHT (unchanged)
     if (x < margin) { x = margin; offscreen = true; }
     if (x > vw - width - margin) { x = vw - width - margin; offscreen = true; }
 
+    // TOP (unchanged)
     if (y < margin) { y = margin; offscreen = true; }
-    if (y > vh - height - margin) { y = vh - height - margin; offscreen = true; }
+
+    // 👇 BOTTOM FIX (avoid caption area)
+    const maxY = vh - captionHeight - height - margin;
+    if (y > maxY) { y = maxY; offscreen = true; }
 
     /* simple collision avoidance */
     for (let other of placed) {
