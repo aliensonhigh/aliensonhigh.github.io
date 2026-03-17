@@ -8,6 +8,7 @@
   cursor:pointer;
   user-select:none;
   color:red;
+  font-size: 24px;
 }
 
 .folder-title:hover{
@@ -28,6 +29,7 @@
 .work-header{
   cursor:pointer;
   font-family:PixelPlay;
+  font-size: 20px;
 }
 
 .work-body{
