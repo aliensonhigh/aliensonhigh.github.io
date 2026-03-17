@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const linkTiles = {
     A:{description:"Get a load of this guy!",url:"about.html"},
-    U:{description:"The Archaic Libraries",url:"portfolio.html"},
+    U:{description:"The Archaic Libraries",url:"archives.html"},
     8:{description:"Wow, the stuff in here is pretty comprehensive. I wouldn't go in if I were you... if you're looking to hire, come on in...",url:"cv.html"},
     V:{description:"hey, psst, congrats on finding me. i love you."}
   };
@@ -93,7 +93,7 @@ window.addEventListener("DOMContentLoaded", () => {
 const buildingLabels = [
   { x: 30, y: 13, text: "About" },
   { x: 32, y: 22, text: "Archives" },
-  { x: 63, y: 25, text: "Curriculum Vitae" }
+  { x: 65, y: 25, text: "CV" }
 ];
 
 const labelElements = [];
