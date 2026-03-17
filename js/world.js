@@ -321,7 +321,7 @@ function updateLabels(){
     // TOP (unchanged)
     if (y < margin) { y = margin; offscreen = true; }
 
-    // 👇 BOTTOM FIX (avoid caption area)
+    //BOTTOM FIX (avoid caption area)
     const maxY = vh - captionHeight - height - margin;
     if (y > maxY) { y = maxY; offscreen = true; }
 

@@ -33,9 +33,9 @@ if (savedX && savedY) {
 
 }
 
-const speed = 2;
-const scrollMargin = 40;   // distance from screen edge
-const scrollSpeed = 8;     // scroll strength
+const speed = 5;
+const scrollMargin = 30;   // distance from screen edge
+const scrollSpeed = 10;     // scroll strength
 const edgeSlowZone = 120;   // distance from screen edge where slowdown begins
 const edgeSlowFactor = 0.35; // minimum speed multiplier near edge
 
@@ -54,10 +54,10 @@ function updateCursor(){
   let dx = 0;
   let dy = 0;
 
-  if(keys["w"] || keys["ArrowUp"]) dy -= speed;
-  if(keys["s"] || keys["ArrowDown"]) dy += speed;
-  if(keys["a"] || keys["ArrowLeft"]) dx -= speed;
-  if(keys["d"] || keys["ArrowRight"]) dx += speed;
+  if(keys["w"] || keys["ArrowUp"] || keys["W"]) dy -= speed;
+  if(keys["s"] || keys["ArrowDown"] || keys["S"]) dy += speed;
+  if(keys["a"] || keys["ArrowLeft"] || keys["A"]) dx -= speed;
+  if(keys["d"] || keys["ArrowRight"] || keys["D"]) dx += speed;
 
   if(dx !== 0 || dy !== 0){
 
