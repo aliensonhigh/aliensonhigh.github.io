@@ -105,6 +105,10 @@ window.addEventListener("DOMContentLoaded", () => {
     "51,30": "thanks for going through my gate. I spent a lot of time working on this.",
     "34,42": "hm... a sword... in a stone...",
     "52,12": "hey! what! how'd you get in here?! get out, you're not supposed to be here.",
+    "27,35": "just pretend this is a bridge.",
+    "45,19": "you encountered a wild Pikachu!.",
+    "57,27": "A couple people used to live here... now its a ghost town...",
+    "14,48": "i bet the view here is really pretty, too bad i can't see."
   };
 
   const world = document.getElementById("world");
